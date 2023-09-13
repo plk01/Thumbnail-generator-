@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
 
+function generateThumbnail () {
+
 // Sprawdzamy, czy podano odpowiednią liczbę argumentów
 if (process.argv.length !== 4) {
   console.error('Użycie: node main.js [ścieżka_do_filmu] [nazwa_miniaturki]');
@@ -43,3 +45,6 @@ exec(cmd, (error, stdout, stderr) => {
     console.log('Miniaturka została wygenerowana pomyślnie i zapisana w:', outputFile);
   }
 });
+}
+
+generateThumbnail();
